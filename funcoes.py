@@ -22,5 +22,10 @@ def faz_jogada(tabuleiro,linha,coluna):
     else:
         tabuleiro[linha][coluna] = '-'
     return tabuleiro 
+
+def posiciona_frota(info_navios):
+    lista_listas = []
+    
+
         
     
