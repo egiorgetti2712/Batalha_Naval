@@ -20,7 +20,7 @@ for i in range(len(nomes_navios)):
                 orientacao = 'vertical'
 
                 if posicao_valida(frota,linha,coluna,orientacao,tamanho) :
-                    preenche_frota(frota,linha,coluna,orientacao,tamanho)
+                    preenche_frota(frota,nome,linha,coluna,orientacao,tamanho)
                     break 
                 else : 
                     print('Esta posição não está válida!')
