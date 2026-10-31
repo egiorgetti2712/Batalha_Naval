@@ -65,9 +65,9 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
     for posicao in posicoes_novo_navio:
         linha_posicao = posicao[0]
         coluna_posicao = posicao[1]
-        if linha_posicao < 0 or linha_posicao >= 10:
+        if linha_posicao < 0 or linha_posicao > 9 :
             return False
-        if coluna_posicao < 0 or coluna_posicao >= 10:
+        if coluna_posicao < 0 or coluna_posicao > 9 :
             return False
     for navios in frota.values():
         for navio in navios:
@@ -76,8 +76,30 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
                     return False
     return True
 
-    
-
+def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
+    print('   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9')
+    print('_______________________________      _______________________________')
+    for linha in range(10):
+        texto = f'{linha}| '
+        for coluna in range(10):
+            casa = tabuleiro_jogador[linha][coluna]
+            texto += f'{casa}'
+            if coluna < 9:
+                texto += '  '
+        texto += f'|     {linha}| '
+        for coluna in range(10):
+            casa = tabuleiro_oponente[linha][coluna]
+            if casa == 'X':
+                texto += 'X'
+            elif casa == '-':
+                texto += '-'
+            else:
+                texto += '0'
+            if coluna < 9:
+                texto += '  '
+        texto += '|'
+        print(texto)
+    print()
     
     
 
