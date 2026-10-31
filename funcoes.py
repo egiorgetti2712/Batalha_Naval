@@ -76,7 +76,30 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
                     return False
     return True
 
-
+def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
+    print('   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9')
+    print('_______________________________      _______________________________')
+    for linha in range(10):
+        texto = f'{linha}| '
+        for coluna in range(10):
+            casa = tabuleiro_jogador[linha][coluna]
+            texto += f'{casa}'
+            if coluna < 9:
+                texto += '  '
+        texto += f'|     {linha}| '
+        for coluna in range(10):
+            casa = tabuleiro_oponente[linha][coluna]
+            if casa == 'X':
+                texto += 'X'
+            elif casa == '-':
+                texto += '-'
+            else:
+                texto += '0'
+            if coluna < 9:
+                texto += '  '
+        texto += '|'
+        print(texto)
+    print()
     
     
 
