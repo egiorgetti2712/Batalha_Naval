@@ -102,8 +102,3 @@ while jogando:
             print('Xi! O oponente derrubou toda a sua frota =(')
             jogando = False
                                                              
-
-
-
-
-
